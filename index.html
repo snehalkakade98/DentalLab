@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegance Dental Ceramics</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+
+    <link rel="icon" type="image/x-icon" href="assets/img1.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+    <style>
+      
+          .DentalHead{
+            font-size:24px;
+            font-family:"poppins";
+            font-weight: bold;
+        }
+        p, label{
+            font-family: 'poppins';
+            font-size:16px;
+            margin: 0;
+        }
+        .invoice{
+            font-weight:bold;
+            font-size: 22px;
+        }
+        table {
+            width: 50%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 12px 5px!important;
+            text-align: center;
+            font-family: 'poppins';
+            vertical-align: middle;
+
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+      
+       @media screen and (max-width: 500px) {
+    .printPart {
+        display: none; /* मोबाईलसाठी लपवा */
+    }
+}
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+   
+    <h4 class="text-center " style="font-family: 'poppins';font-weight: bold;">Vighnaharta Dental Lab</h4>
+    <div class="d-flex justify-content-end">  <button style="font-family: poppins;" class="btn btn-primary  mt-3" onclick="generate()">Generate PDF</button></div>
+   
+
+    <form action="javascript:void(0);">
+
+        <div class="mb-3">
+            <label>Invoice No </label>
+                   <input type="text" class="form-control" id="invoiceNo" placeholder="Enter Invoice No">
+
+          </div>
+
+          <div class="mb-3">
+            <label>Bill Period </label>
+                   <input type="date" class="form-control" id="BillPeriod">
+
+          </div>
+
+          <div class="mb-3">
+            <label>To </label>
+                   <input type="date" class="form-control" id="To">
+
+          </div>
+
+          <div class="mb-3">
+            <label>Doctor Name</label>
+            <input type="text" class="form-control" id="clientnm" placeholder="Enter Doctor Name">
+          </div>
+
+          <div class="mb-3">
+            <label>Mobile No</label>
+            <input type="text" maxlength="10" class="form-control" id="mobileno" placeholder="Enter Mobile No">
+          </div>
+
+          <div class="mb-3">
+            <label>Doctor Address</label>
+            <textarea  class="form-control" id="address" placeholder="Enter Doctor Address"></textarea>
+          </div>
+
+
+          <div class="mb-3">
+            <label>Bank Name</label>
+            <input type="text"  class="form-control" id="banckname" placeholder="Enter Bank Name">
+
+          </div>
+
+          <div class="mb-3">
+            <label>Account No</label>
+            <input type="text"  class="form-control" id="AccountNo" placeholder="Enter Account No">
+
+          </div>
+
+          <div class="mb-3">
+            <label>IFSC Code</label>
+            <input type="text"  class="form-control" id="IFSCCode" placeholder="Enter IFSC Code">
+
+          </div>
+
+          <hr>
+
+          <h4 style="font-family:poppins;font-weight:bold" class="text-center">Patient Info</h4>
+
+          <div class="mb-3">
+            <label>Inward No</label>
+            <input type="text" class="form-control" id="Inwardno" placeholder="Enter Inward No">
+          </div>
+
+          <div class="mb-3">
+            <label>Job No</label>
+            <input type="number" class="form-control" id="Jobno" placeholder="Enter Job No">
+          </div>
+
+          <div class="mb-3">
+            <label>Entry Date </label>
+                   <input type="date" class="form-control" id="EntryDate">
+
+          </div>
+
+          <div class="mb-3">
+            <label>Patient Name </label>
+                   <input type="text" class="form-control" id="PatientName">
+
+          </div>
+
+          <div class="mb-3">
+            <label>Work Type </label>
+                   <input type="text" class="form-control" id="WorkType">
+
+          </div>
+
+          <div class="mb-3">
+            <label>Region Description</label>
+            <textarea  class="form-control" id="RegionDescription" placeholder="Enter Region Description"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label>Unit</label>
+            <input type="text" class="form-control" id="unit">
+
+          </div>
+
+          <div class="mb-3">
+            <label>Amount</label>
+            <input type="text" class="form-control" id="Amount">
+
+          </div>
+    </form>
+
+
+    <div class="col-12">
+        <button type="button" id="btn_addtolist" class="btn btn-primary" style="font-family: poppins;">Add To  list</button>
+    </div>
+
+
+
+
+
+
+    <div class="printPart   p-3 border mt-3" id="PrintPreview">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="">
+            <img src="assets/img1.jpg" alt="Sample Image" height="80" width=" 80" style="border-radius:50%">
+
+
+        </div>
+        <div class="">
+           <h5 class="DentalHead">Elegance Dental Ceramics</h5>
+
+        </div>
+        <div></div>
+    </div>
+
+
+    <div class="col-12 text-center">
+         <p>2027 'E' Ward, Tulsi Apartment, Flat No.6, Opp. Morya Hospital, 9th Lane Rajarampuri, Kolhapur</p>
+    </div>
+
+    <div class="col-12 mt-4 mb-3">
+        <div class="d-flex justify-content-between" style="gap:10px">
+            <div class="">
+                <p><b>Mobile:</b> 8805108000</p>
+
+            </div>
+
+            <div class="">
+                <p><b>Email :</b> elegancedentalceramics@gmail.com</p>
+            </div>
+
+            <div class="">
+                <p><b>Landline:</b> <span>7219080006</span> </p>
+            </div>
+        </div>
+    </div>
+
+        
+<div class="col-12 py-2 d-flex justify-content-between align-items-center" style="border-top:2px solid black;border-bottom: 2px solid black;">
+<div></div>
+<div><p class="mb-0 invoice">Invoice</p></div>
+<div><p class="mb-0">Date <span id="showTodaytDate"></span></p></div>
+</div>
+
+
+
+<div class="col-12 mt-4">
+    <div class="d-flex justify-content-between" style="gap: 10px;">
+        <div class="">
+            <p><b>invoice No:</b> <span id="showInvoiceNo"></span></p>
+
+        </div>
+
+        <div class="">
+            <p><b>Bill Period :</b> <span id="showBillperiod"></span></p>
+        </div>
+
+        <div class="">
+            <p><b>Το :</b> <span id="showTo"></span> </p>
+        </div>
+    </div>
+</div>
+
+<div class="col-12 mt-3">
+    <div class="row">
+        <div class="col-12">
+            <p><b>Doctor Name:</b> <span id="clientname"></span></p>
+
+        </div>
+
+    </div>
+</div>
+
+
+<div class="col-12 mt-3">
+    <div class="row">
+        <div class="col-12">
+            <p><b>Mobile Number:</b> <span id="showmobileno"></span></p>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="col-12 mt-3 mb-2">
+    <div class="row">
+        <div class="col-12">
+            <p><b>Doctor Address:</b> <span id="showaddress"></span></p>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="col-12 mt-3 mb-2">
+    <div class="row">
+        <div class="col-12">
+            <p><b>banck Name:</b> <span id="showbanckname"></span></p>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="col-12 mt-3 mb-2">
+    <div class="row">
+        <div class="col-12">
+            <p><b>Account No:</b> <span id="showAccountNo"></span></p>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="col-12 mt-3 mb-2">
+    <div class="row">
+        <div class="col-12">
+            <p><b>IFSC ode:</b> <span id="showIFSCode"></span></p>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="col-12">
+
+    <table class="table">
+        <thead>
+
+        <tr>
+            <th style="width: 2%;">Inword No</th>
+            <th style="width: 5%;">Job No</th>
+            <th style="width: 22%;">Entry Date</th>
+            <th style="width: 31%;">Patient Name</th>
+            <th style="width: 5%;">Work Type</th>
+            <th style="width: 31%;"> Region Description</th>
+            <th style="width: 5%;">Unit </th>
+            <th style="width: 5%;">Amount</th>
+
+        </tr>
+    </thead>
+
+    <tbody id="UnitTable">
+
+    </tbody>
+
+       
+      
+    </table>
+</div>
+
+
+<div class="col-12">
+    <div class="row">
+        <div class="col-7" style="border-right: 2px solid;">
+            <p><b>Amount In Word  &nbsp;&nbsp; :</b>  <span></span></p>
+        </div>
+        <div class="col-5">
+
+            <div class="row mb-1">
+                <div class="col-8 text-end"><p><b>Total &nbsp;&nbsp; :</b></p></div>
+                <div class="col-4"><p id="TotalAmt"></p></div>
+             </div>
+
+
+            <div class="row mb-1">
+                <div class="col-8 text-end"><p><b>Discount &nbsp; : (0.0%)  &nbsp;&nbsp; :</b></p></div>
+                <div class="col-4"><p id="Discount"></p></div>
+             </div>
+
+
+            <div class="row mb-1">
+                <div class="col-8 text-end"><p><b>Total With Discount &nbsp;&nbsp; :</b></p></div>
+                <div class="col-4"><p id="TotalDiscount"></p></div>
+             </div>
+
+
+            <div class="row mb-1">
+                <div class="col-8 text-end"><p><b>Total Amount &nbsp;&nbsp; :</b></p></div>
+                <div class="col-4"><p id="TotalAmount"></p></div>
+             </div>
+
+
+            <div class="row mb-1">
+                <div class="col-8 text-end"><p><b>Previouse Balance &nbsp;&nbsp; :</b></p></div>
+                <div class="col-4"><p id="showPreviouseBalance"></p></div>
+             </div>
+
+
+
+             <div class="row mb-1">
+                <div class="col-8 text-end"><p><b>Total With Previouse &nbsp;&nbsp; : </b></p></div>
+                <div class="col-4"><p></p></div>
+             </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+<hr>
+<div class="col-12">
+    <div class="row">
+        <div class="col-8">
+          
+            <div class="row mb-1">
+                <div class="col-5"><p><b>Company GSTIN :</b></p></div>
+                <div class="col-6"><p>VAT IN</p></div>
+             </div>
+
+
+             <div class="row mb-1">
+                <div class="col-5"><p><b>HSN NO :</b></p></div>
+                <div class="col-6"><p>CST</p></div>
+             </div>
+
+             <div class="row mb-1">
+                <div class="col-5"><p><b>Company PAN :</b></p></div>
+                <div class="col-6"><P>PAN</P></div>
+             </div>
+
+
+
+        </div>
+
+
+
+        <div class="col-4">
+
+            <div class="row">
+                <div class="col-8"><p><b>Authorized Sign</b></p></div>
+                <!-- <div class="col-6"></div> -->
+             </div>
+
+
+            
+
+        </div>
+    </div>
+</div>
+
+
+
+       
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+
+document.getElementById('BillPeriod').valueAsDate = new Date();
+document.getElementById('To').valueAsDate = new Date();
+document.getElementById('EntryDate').valueAsDate = new Date();
+
+
+    var a = false;
+    var i = 0;
+    var chkRemoveItem = 0;
+    $(document).ready(function() {
+    
+        // $('.pointev').css('pointer-events', 'none');
+        // $(".pointev").addClass(".pointev .select2-selection");
+    
+        $("#btn_addtolist").click(function() {
+            if (a == false) {
+            
+                // var fkproductId = document.getElementById("fkproductId").value;
+                // var fkproductName = $('#fkproductId option:selected').text();
+    
+              
+    
+                var Inwardno = document.getElementById("Inwardno").value;
+                var Jobno = document.getElementById("Jobno").value;
+
+                var EntryDate = document.getElementById("EntryDate").value;
+                var PatientName = document.getElementById("PatientName").value;
+
+                var WorkType = document.getElementById("WorkType").value;
+                var RegionDescription = document.getElementById("RegionDescription").value;
+
+                var unit = document.getElementById("unit").value;
+                var Amount = document.getElementById("Amount").value;
+
+            
+    
+                // if ((fkInwardTypeId == 0 || fkInwardTypeId === null || fkproductId == 0 || fkproductId === null || quantity == "")) {
+    
+                //     if (fkInwardTypeId == "") {
+                //         document.getElementById("fkInwardTypeIdError").innerHTML = " Select Inward Type.";
+                //     }
+                //     if (fkproductId == "") {
+                //         document.getElementById("fkitemIdError").innerHTML = " Select Product Name.";
+                //     }
+                    
+                //    if (quantity=="") {document.getElementById("quantityError").innerHTML=" Enter Quantity.";}
+    
+    
+    
+                //     myFunction();
+                // } else {
+    
+
+                // <td style="padding: 0px 5px !important;height:30px!important"> <center> <button type="button" style="padding: 0px 5px!important;font-size: 15px;" class="btn"  id="btnItemRowDelete' +
+                //         i + '" onclick="remove_item_details(' + i +
+                //         ');"><i class="fas fa-trash"></i></button></center> </td>
+
+                // <td style="padding: 0px 5px!important;font-size: 15px;"> <input type="hidden" readonly id="fkproductName' + i +
+                //         '" name="fkproductId[]"  class="Itemunit-Id form-control tds-width  addinput fkproductName" value="' +
+                //         fkproductId + '">' + fkproductName +
+                //         '</td>
+
+                // <td class="" style="padding: 0px 5px!important;font-size: 15px;"> <input type="hidden"  id="quantity' +
+                //         i +
+                //         '" name="quantity[]"  class=" quantity Itemunit-Id form-control tds-width " value="' +
+                //         quantity +'">' +quantity +'</td>
+                   
+                var dateObj = new Date(EntryDate);
+        var formattedDate = ("0" + dateObj.getDate()).slice(-2) + "-" + 
+                            ("0" + (dateObj.getMonth() + 1)).slice(-2) + "-" + 
+                            dateObj.getFullYear();
+
+
+                    var objTo = document.getElementById('UnitTable');
+                    var divtest = document.createElement("tr");
+                    divtest.setAttribute("class", "removeclass" + i);
+                    var objTo = document.getElementById('UnitTable');
+                    var divtest = document.createElement("tr");
+                    divtest.setAttribute("class", "removeclass" + i);
+                    divtest.innerHTML =
+                    '   <td class="" style="padding: 7px 5px!important;font-size: 15px;">' +Inwardno +'</td> <td class="" style="padding: 7px 5px!important;font-size: 15px;">' +Jobno +'</td> <td class="" style="padding: 7px 5px!important;font-size: 15px;    word-break: break-all;">' +formattedDate +'</td> <td class="" style="padding: 7px 5px!important;font-size: 15px;">' +PatientName +'</td> <td class="" style="padding: 7px 5px!important;font-size: 15px;">' +WorkType +'</td> <td class="" style="padding: 7px 5px!important;font-size: 15px;">' +RegionDescription +'</td> <td class="" style="padding: 7px 5px!important;font-size: 15px;">' +unit +'</td> <td class="" style="padding: 7px 5px!important;font-size: 15px;"> <input type="hidden"  id="Amount' +
+                        i +'"  class=" Amount  form-control " value="' + Amount +'">' +Amount +'</td> ';
+
+    
+                    objTo.appendChild(divtest);
+                    i++;
+    
+    
+                    clearData();
+                    finalCalculation();
+    
+    
+       
+    
+        
+    
+                // }
+    
+            }
+        });
+    
+    
+       
+    
+    });
+    
+    function clearData() {
+    
+       
+        $("#Inwardno,#Jobno,#PatientName,#WorkType,#RegionDescription,#unit,#Amount").val('');
+      
+
+    
+    }
+    
+    function remove_item_details(i) {
+        $('.removeclass' + i).remove();
+        chkRemoveItem = 1;
+        finalCalculation();
+    
+    
+    }
+    
+    
+    function finalCalculation() {
+        // ************************ Sum of charges  *****************
+    
+        var Amount = document.getElementsByClassName("Amount");
+    
+        var TotalAmount = 0;
+        for (var p = 0; p < Amount.length; p++) {
+    
+            TotalAmount = parseInt(Amount[p].value) + parseInt(TotalAmount)||0;
+    
+        }
+        console.log("total Amount", TotalAmount);
+        document.getElementById("TotalAmt").innerHTML = TotalAmount.toFixed(2);
+        document.getElementById("TotalDiscount").innerHTML = TotalAmount.toFixed(2);
+        document.getElementById("TotalAmount").innerHTML = TotalAmount.toFixed(2);
+        document.getElementById("showPreviouseBalance").innerHTML = TotalAmount.toFixed(2);
+        document.getElementById("Discount").innerHTML = 0.00;
+
+
+    }
+    
+    
+
+    
+    // function myFunction() {
+    //     var z = document.getElementById("fkitemIdError");
+    //     // var c=document.getElementById("fkpartyIdError");
+    //     var d = document.getElementById("fkInwardTypeIdError");
+    //     //  var e=document.getElementById("itemPriceError");
+    //      var f=document.getElementById("quantityError");
+    
+    
+    
+    
+    //     setTimeout(function() {
+    //         z.innerHTML = ""
+    //     }, 3000);
+    //     // setTimeout(function(){ c.innerHTML="" }, 3000);
+    //     setTimeout(function() {
+    //         d.innerHTML = ""
+    //     }, 3000);
+    //     // setTimeout(function(){ e.innerHTML="" }, 3000);
+    //     setTimeout(function(){ f.innerHTML="" }, 3000);
+    
+    
+    
+    // }
+    </script>
+    
+
+
+
+
+
+
+
+
+
+<script>
+
+
+function generate() {
+    const ele = document.getElementById('PrintPreview');
+
+    // प्रिंट व्ह्यू दिसू द्या
+    ele.style.display = 'block';
+
+    let clientName = document.getElementById("clientnm").value;
+    let mobileno = document.getElementById("mobileno").value;
+    let address = document.getElementById("address").value;
+    let banckname = document.getElementById("banckname").value;
+    let AccountNo = document.getElementById("AccountNo").value;
+    let IFSCCode = document.getElementById("IFSCCode").value;
+    let invoiceNo = document.getElementById("invoiceNo").value;
+    let BillPeriod = document.getElementById("BillPeriod").value;
+    let To = document.getElementById("To").value;
+
+    let date = new Date(BillPeriod);
+    let dateTo = new Date(To);
+
+    let formattedDate = date.getDate().toString().padStart(2, '0') + "/" + 
+                        (date.getMonth() + 1).toString().padStart(2, '0') + "/" + 
+                        date.getFullYear();
+
+    let formattedDateTo = dateTo.getDate().toString().padStart(2, '0') + "/" + 
+                          (dateTo.getMonth() + 1).toString().padStart(2, '0') + "/" + 
+                          dateTo.getFullYear();
+
+    document.getElementById("clientname").textContent = clientName;
+    document.getElementById("showmobileno").textContent = mobileno;
+    document.getElementById("showaddress").textContent = address;
+    document.getElementById("showbanckname").textContent = banckname;
+    document.getElementById("showAccountNo").textContent = AccountNo;
+    document.getElementById("showIFSCode").textContent = IFSCCode;
+    document.getElementById("showInvoiceNo").textContent = invoiceNo;
+    document.getElementById("showBillperiod").textContent = formattedDate;
+    document.getElementById("showTo").textContent = formattedDateTo;
+    document.getElementById("showTodaytDate").textContent = formattedDateTo;
+
+    setTimeout(function() {
+        var opt = {
+            margin: 0,
+            backgroundColor: "#ffffff",
+            filename: 'abc.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'in', format: 'A4', orientation: 'portrait' }
+        };
+
+        html2pdf().set(opt).from(ele).save().then(() => {
+            if (window.innerWidth <= 500) {
+                ele.style.display = 'none';
+            }
+
+            // PDF डाउनलोड झाल्यावर पेज रीफ्रेश करा
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
+        });
+
+    }, 500);
+}
+
+
+</script>
+
+</body>
+</html>
