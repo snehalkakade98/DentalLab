@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegance Dental Ceramics</title>
+    <title>Vighnaharta Dental Lab</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
@@ -61,106 +62,93 @@
 
     <form action="javascript:void(0);">
 
-        <div class="mb-3">
-            <label>Invoice No </label>
-                   <input type="text" class="form-control" id="invoiceNo" placeholder="Enter Invoice No">
 
-          </div>
+          <div class="row">
 
-          <div class="mb-3">
-            <label>Bill Period </label>
-                   <input type="date" class="form-control" id="BillPeriod">
-
-          </div>
+         
 
           <div class="mb-3">
-            <label>To </label>
-                   <input type="date" class="form-control" id="To">
-
-          </div>
-
-          <div class="mb-3">
-            <label>Doctor Name</label>
-            <input type="text" class="form-control" id="clientnm" placeholder="Enter Doctor Name">
+            <label> Client Name</label>
+            <input type="text" class="form-control" id="clientnm" placeholder="M/s">
           </div>
 
           <div class="mb-3">
             <label>Mobile No</label>
-            <input type="text" maxlength="10" class="form-control" id="mobileno" placeholder="Enter Mobile No">
+            <input type="number"  class="form-control"  id="mobileno" placeholder="Enter Mobile No">
           </div>
 
+         
           <div class="mb-3">
-            <label>Doctor Address</label>
+            <label> Address</label>
             <textarea  class="form-control" id="address" placeholder="Enter Doctor Address"></textarea>
           </div>
 
-
-          <div class="mb-3">
-            <label>Bank Name</label>
-            <input type="text"  class="form-control" id="banckname" placeholder="Enter Bank Name">
-
-          </div>
-
-          <div class="mb-3">
-            <label>Account No</label>
-            <input type="text"  class="form-control" id="AccountNo" placeholder="Enter Account No">
+          <div class="mb-3 col-6">
+            <label>No</label>
+            <input type="number"  class="form-control" id="No" placeholder="Enter No">
 
           </div>
 
-          <div class="mb-3">
-            <label>IFSC Code</label>
-            <input type="text"  class="form-control" id="IFSCCode" placeholder="Enter IFSC Code">
+          <div class="mb-3 col-6">
+            <label>Bill Date </label>
+                   <input type="date" class="form-control" id="BillPeriod">
 
           </div>
+
+
 
           <hr>
 
           <h4 style="font-family:poppins;font-weight:bold" class="text-center">Patient Info</h4>
 
-          <div class="mb-3">
-            <label>Inward No</label>
-            <input type="text" class="form-control" id="Inwardno" placeholder="Enter Inward No">
+          <div class="mb-3 col-12">
+            <label>Sr No</label>
+            <input type="number" class="form-control" id="Srno" placeholder="Enter Sr No">
           </div>
 
-          <div class="mb-3">
-            <label>Job No</label>
-            <input type="number" class="form-control" id="Jobno" placeholder="Enter Job No">
-          </div>
 
-          <div class="mb-3">
-            <label>Entry Date </label>
-                   <input type="date" class="form-control" id="EntryDate">
-
-          </div>
-
-          <div class="mb-3">
-            <label>Patient Name </label>
-                   <input type="text" class="form-control" id="PatientName">
-
-          </div>
-
-          <div class="mb-3">
-            <label>Work Type </label>
-                   <input type="text" class="form-control" id="WorkType">
-
-          </div>
-
-          <div class="mb-3">
+          <div class="mb-3 col-12">
             <label>Region Description</label>
             <textarea  class="form-control" id="RegionDescription" placeholder="Enter Region Description"></textarea>
           </div>
 
-          <div class="mb-3">
-            <label>Unit</label>
-            <input type="text" class="form-control" id="unit">
+          <div class="mb-3 col-6">
+            <label>Teeth No</label>
+                   <input type="number" class="form-control" id="TeethNo">
 
           </div>
 
-          <div class="mb-3">
+          <div class="mb-3 col-6">
+            <label>Teeth Side</label>
+                 <select  id="teethSide" class="form-control">
+                    <option value="0">Select</option>
+                    <option value="0">Left</option>
+                    <option value="0">Right</option>
+                    <option value="0">Top</option>
+                    <option value="0">Bottom</option>
+                 </select>
+
+
+          </div>
+
+          <div class="mb-3 col-6">
+            <label>Qty</label>
+            <input type="text" class="form-control" id="qty">
+
+          </div>
+
+          <div class="mb-3 col-6">
+            <label>Rate </label>
+                   <input type="text" class="form-control" id="Rate">
+
+          </div>
+
+          <div class="mb-3 col-6">
             <label>Amount</label>
             <input type="text" class="form-control" id="Amount">
 
           </div>
+        </div>
     </form>
 
 
@@ -173,143 +161,96 @@
 
 
 
-    <div class="printPart   p-3 border mt-3" id="PrintPreview">
+    <div class="printPart   pt-0  pb-3 col-11    mt-3" id="PrintPreview" style="border: 2px solid;margin-left: 4%;">
+          
+        <div class=" text-center px-2" style="    margin: 0 auto;width:29%;border-bottom: 2px solid;border-right: 2px solid;border-left: 2px solid;"><p class="mb-0">Cash/ Credit Memo</p></div>
 
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <div class="">
+
+    <div class="d-flex justify-content-between align-items-center mb-3 px-3">
+        <div style="margin-left: 5%;">
             <img src="assets/img1.jpg" alt="Sample Image" height="80" width=" 80" style="border-radius:50%">
 
 
         </div>
         <div class="">
-           <h5 class="DentalHead">Elegance Dental Ceramics</h5>
+           <h5 class="DentalHead">Vighnaharta Dental Lab</h5>
 
         </div>
-        <div></div>
+        <div style="visibility: hidden;">dfdfdfdfdfdfdfdfd</div>
     </div>
 
 
     <div class="col-12 text-center">
-         <p>2027 'E' Ward, Tulsi Apartment, Flat No.6, Opp. Morya Hospital, 9th Lane Rajarampuri, Kolhapur</p>
+         <p>(Ceramic, White Metal, Acrylic, Flexible Denture, CPD) <br>
+            GANESH JAGTAP (Dental Technician) <br>
+            Mob. 9767 161800</p>
     </div>
 
-    <div class="col-12 mt-4 mb-3">
-        <div class="d-flex justify-content-between" style="gap:10px">
-            <div class="">
-                <p><b>Mobile:</b> 8805108000</p>
+    <div class="col-12 mt-4 px-3" style="    border-top: 2px solid;
+    border-bottom: 1px solid;">
+        <div class="row" >
+            <div class="col-9" style="border-right: 2px solid;">
 
+
+                <div class="row mb-1">
+                    <div style="width:22%"><p><b>M/s </b></p></div>
+                    <div  style="width:1%"><p>:</p></div>
+                    <div class="col-6"><p><span id="clientname"></span></p></div>
+                 </div>
+    
+    
+                 <div class="row mb-1">
+                    <div style="width:22%"><p><b>Address </b></p></div>
+                    <div  style="width:1%"><p>:</p></div>
+                    <div class="col-6"><p><span id="showaddress"></span></p></div>
+                 </div>
+    
+                 <div class="row mb-1">
+                    <div class="" style="width:22%"><p><b>Mobile No </b></p></div>
+                    <div  style="width:1%"><p>:</p></div>
+                    <div class="col-6"><P><span id="showmobileno"></span></P></div>
+                 </div>
+
+
+                
             </div>
 
-            <div class="">
-                <p><b>Email :</b> elegancedentalceramics@gmail.com</p>
+         
+
+
+          
+            <div class="col-3">
+
+                <div class="row mb-1 mt-2" style="height: 30px;">
+                    <div style="width:24%"><p><b>No </b></p></div>
+                    <div style="width:1%"><p>:</p></div>
+                    <div class="col-6"  style="padding-left:5px!important"><p><span id="showNo"></span></p></div>
+                 </div>
+
+
+                 <div class="row mb-1">
+                    <div style="width:24%"><p><b>Date </b></p></div>
+                    <div class="" style="width:1%"><p>:</p></div>
+                    <div class="col-6" style="padding-left:5px!important"><p><span id="showBillDate"></span></p></div>
+                 </div>
+
+
+                </div>
+
             </div>
-
-            <div class="">
-                <p><b>Landline:</b> <span>7219080006</span> </p>
-            </div>
         </div>
-    </div>
-
-        
-<div class="col-12 py-2 d-flex justify-content-between align-items-center" style="border-top:2px solid black;border-bottom: 2px solid black;">
-<div></div>
-<div><p class="mb-0 invoice">Invoice</p></div>
-<div><p class="mb-0">Date <span id="showTodaytDate"></span></p></div>
-</div>
-
-
-
-<div class="col-12 mt-4">
-    <div class="d-flex justify-content-between" style="gap: 10px;">
-        <div class="">
-            <p><b>invoice No:</b> <span id="showInvoiceNo"></span></p>
-
-        </div>
-
-        <div class="">
-            <p><b>Bill Period :</b> <span id="showBillperiod"></span></p>
-        </div>
-
-        <div class="">
-            <p><b>Το :</b> <span id="showTo"></span> </p>
-        </div>
-    </div>
-</div>
-
-<div class="col-12 mt-3">
-    <div class="row">
-        <div class="col-12">
-            <p><b>Doctor Name:</b> <span id="clientname"></span></p>
-
-        </div>
-
-    </div>
-</div>
-
-
-<div class="col-12 mt-3">
-    <div class="row">
-        <div class="col-12">
-            <p><b>Mobile Number:</b> <span id="showmobileno"></span></p>
-
-        </div>
-
-    </div>
-</div>
-
-<div class="col-12 mt-3 mb-2">
-    <div class="row">
-        <div class="col-12">
-            <p><b>Doctor Address:</b> <span id="showaddress"></span></p>
-
-        </div>
-
-    </div>
-</div>
-
-<div class="col-12 mt-3 mb-2">
-    <div class="row">
-        <div class="col-12">
-            <p><b>banck Name:</b> <span id="showbanckname"></span></p>
-
-        </div>
-
-    </div>
-</div>
-
-<div class="col-12 mt-3 mb-2">
-    <div class="row">
-        <div class="col-12">
-            <p><b>Account No:</b> <span id="showAccountNo"></span></p>
-
-        </div>
-
-    </div>
-</div>
-
-<div class="col-12 mt-3 mb-2">
-    <div class="row">
-        <div class="col-12">
-            <p><b>IFSC ode:</b> <span id="showIFSCode"></span></p>
-
-        </div>
-
-    </div>
-</div>
+    
 
 <div class="col-12">
 
-    <table class="table">
+    <table class="table" style="border-top: none;">
         <thead>
 
         <tr>
-            <th style="width: 2%;">Inword No</th>
-            <th style="width: 5%;">Job No</th>
-            <th style="width: 22%;">Entry Date</th>
-            <th style="width: 31%;">Patient Name</th>
-            <th style="width: 5%;">Work Type</th>
-            <th style="width: 31%;"> Region Description</th>
-            <th style="width: 5%;">Unit </th>
+            <th style="width: 3%;">sr No</th>
+            <th style="width: 25%;">Description</th>
+            <th style="width: 3%;">Qty</th>
+            <th style="width: 3%;">Rate</th>
             <th style="width: 5%;">Amount</th>
 
         </tr>
@@ -320,100 +261,38 @@
     </tbody>
 
        
-      
+      <tfoot>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total</td>
+            <td><p id="TotalAmt" style="font-weight:bold;font-size:18px"></p></td>
+
+        </tr>
+      </tfoot>
     </table>
 </div>
 
 
-<div class="col-12">
+<div class="col-12 mt-4  px-4">
     <div class="row">
-        <div class="col-7" style="border-right: 2px solid;">
-            <p><b>Amount In Word  &nbsp;&nbsp; :</b>  <span></span></p>
+        <div class="col-7" >
+            <p><b>Rs. In Word  &nbsp;&nbsp; :</b>  <span id="NumberInWord"></span></p>
         </div>
-        <div class="col-5">
-
-            <div class="row mb-1">
-                <div class="col-8 text-end"><p><b>Total &nbsp;&nbsp; :</b></p></div>
-                <div class="col-4"><p id="TotalAmt"></p></div>
-             </div>
-
-
-            <div class="row mb-1">
-                <div class="col-8 text-end"><p><b>Discount &nbsp; : (0.0%)  &nbsp;&nbsp; :</b></p></div>
-                <div class="col-4"><p id="Discount"></p></div>
-             </div>
-
-
-            <div class="row mb-1">
-                <div class="col-8 text-end"><p><b>Total With Discount &nbsp;&nbsp; :</b></p></div>
-                <div class="col-4"><p id="TotalDiscount"></p></div>
-             </div>
-
-
-            <div class="row mb-1">
-                <div class="col-8 text-end"><p><b>Total Amount &nbsp;&nbsp; :</b></p></div>
-                <div class="col-4"><p id="TotalAmount"></p></div>
-             </div>
-
-
-            <div class="row mb-1">
-                <div class="col-8 text-end"><p><b>Previouse Balance &nbsp;&nbsp; :</b></p></div>
-                <div class="col-4"><p id="showPreviouseBalance"></p></div>
-             </div>
-
-
-
-             <div class="row mb-1">
-                <div class="col-8 text-end"><p><b>Total With Previouse &nbsp;&nbsp; : </b></p></div>
-                <div class="col-4"><p></p></div>
-             </div>
-
-
-
-        </div>
-    </div>
-</div>
-
-<hr>
-<div class="col-12">
-    <div class="row">
-        <div class="col-8">
-          
-            <div class="row mb-1">
-                <div class="col-5"><p><b>Company GSTIN :</b></p></div>
-                <div class="col-6"><p>VAT IN</p></div>
-             </div>
-
-
-             <div class="row mb-1">
-                <div class="col-5"><p><b>HSN NO :</b></p></div>
-                <div class="col-6"><p>CST</p></div>
-             </div>
-
-             <div class="row mb-1">
-                <div class="col-5"><p><b>Company PAN :</b></p></div>
-                <div class="col-6"><P>PAN</P></div>
-             </div>
-
-
-
-        </div>
-
-
-
-        <div class="col-4">
-
-            <div class="row">
-                <div class="col-8"><p><b>Authorized Sign</b></p></div>
-                <!-- <div class="col-6"></div> -->
-             </div>
-
+        <div class="col-5 text-end">
 
             
+            <p><b>For Vighnaharta Dental Lab</b></p>
+            
+
+
 
         </div>
     </div>
 </div>
+
+
 
 
 
@@ -427,9 +306,12 @@
 
 <script type="text/javascript">
 
+document.getElementById('mobileno').addEventListener('input', function (e) {
+  e.target.value = e.target.value.replace(/[^0-9]/g, '').slice(0, 10);
+});
+
 document.getElementById('BillPeriod').valueAsDate = new Date();
-document.getElementById('To').valueAsDate = new Date();
-document.getElementById('EntryDate').valueAsDate = new Date();
+
 
 
     var a = false;
@@ -437,67 +319,28 @@ document.getElementById('EntryDate').valueAsDate = new Date();
     var chkRemoveItem = 0;
     $(document).ready(function() {
     
-        // $('.pointev').css('pointer-events', 'none');
-        // $(".pointev").addClass(".pointev .select2-selection");
-    
+       
         $("#btn_addtolist").click(function() {
             if (a == false) {
             
-                // var fkproductId = document.getElementById("fkproductId").value;
-                // var fkproductName = $('#fkproductId option:selected').text();
+                
+                var teethSideName = $('#teethSide option:selected').text();
     
               
     
-                var Inwardno = document.getElementById("Inwardno").value;
-                var Jobno = document.getElementById("Jobno").value;
-
-                var EntryDate = document.getElementById("EntryDate").value;
-                var PatientName = document.getElementById("PatientName").value;
-
-                var WorkType = document.getElementById("WorkType").value;
+                var Srno = document.getElementById("Srno").value;
                 var RegionDescription = document.getElementById("RegionDescription").value;
 
-                var unit = document.getElementById("unit").value;
+                var TeethNo = document.getElementById("TeethNo").value;
+                var Rate = document.getElementById("Rate").value;
+
+                var qty = document.getElementById("qty").value;
+               
+           
                 var Amount = document.getElementById("Amount").value;
 
             
     
-                // if ((fkInwardTypeId == 0 || fkInwardTypeId === null || fkproductId == 0 || fkproductId === null || quantity == "")) {
-    
-                //     if (fkInwardTypeId == "") {
-                //         document.getElementById("fkInwardTypeIdError").innerHTML = " Select Inward Type.";
-                //     }
-                //     if (fkproductId == "") {
-                //         document.getElementById("fkitemIdError").innerHTML = " Select Product Name.";
-                //     }
-                    
-                //    if (quantity=="") {document.getElementById("quantityError").innerHTML=" Enter Quantity.";}
-    
-    
-    
-                //     myFunction();
-                // } else {
-    
-
-                // <td style="padding: 0px 5px !important;height:30px!important"> <center> <button type="button" style="padding: 0px 5px!important;font-size: 15px;" class="btn"  id="btnItemRowDelete' +
-                //         i + '" onclick="remove_item_details(' + i +
-                //         ');"><i class="fas fa-trash"></i></button></center> </td>
-
-                // <td style="padding: 0px 5px!important;font-size: 15px;"> <input type="hidden" readonly id="fkproductName' + i +
-                //         '" name="fkproductId[]"  class="Itemunit-Id form-control tds-width  addinput fkproductName" value="' +
-                //         fkproductId + '">' + fkproductName +
-                //         '</td>
-
-                // <td class="" style="padding: 0px 5px!important;font-size: 15px;"> <input type="hidden"  id="quantity' +
-                //         i +
-                //         '" name="quantity[]"  class=" quantity Itemunit-Id form-control tds-width " value="' +
-                //         quantity +'">' +quantity +'</td>
-                   
-                var dateObj = new Date(EntryDate);
-        var formattedDate = ("0" + dateObj.getDate()).slice(-2) + "-" + 
-                            ("0" + (dateObj.getMonth() + 1)).slice(-2) + "-" + 
-                            dateObj.getFullYear();
-
 
                     var objTo = document.getElementById('UnitTable');
                     var divtest = document.createElement("tr");
@@ -506,7 +349,7 @@ document.getElementById('EntryDate').valueAsDate = new Date();
                     var divtest = document.createElement("tr");
                     divtest.setAttribute("class", "removeclass" + i);
                     divtest.innerHTML =
-                    '   <td class="" style="padding: 7px 5px!important;font-size: 15px;">' +Inwardno +'</td> <td class="" style="padding: 7px 5px!important;font-size: 15px;">' +Jobno +'</td> <td class="" style="padding: 7px 5px!important;font-size: 15px;    word-break: break-all;">' +formattedDate +'</td> <td class="" style="padding: 7px 5px!important;font-size: 15px;">' +PatientName +'</td> <td class="" style="padding: 7px 5px!important;font-size: 15px;">' +WorkType +'</td> <td class="" style="padding: 7px 5px!important;font-size: 15px;">' +RegionDescription +'</td> <td class="" style="padding: 7px 5px!important;font-size: 15px;">' +unit +'</td> <td class="" style="padding: 7px 5px!important;font-size: 15px;"> <input type="hidden"  id="Amount' +
+                    '   <td class="" style="padding:  5px!important;font-size: 15px;">' +Srno +'</td> <td class="" style="padding:  5px!important;font-size: 15px;">' +RegionDescription +'<br> '+TeethNo+' '+teethSideName+'</td> <td class="" style="padding: 5px!important;font-size: 15px;    word-break: break-all;">' +qty +'</td> <td class="" style="padding: 5px!important;font-size: 15px;">' +Rate +'</td>  <td class="" style="padding:  5px!important;font-size: 15px;"> <input type="hidden"  id="Amount' +
                         i +'"  class=" Amount  form-control " value="' + Amount +'">' +Amount +'</td> ';
 
     
@@ -518,11 +361,6 @@ document.getElementById('EntryDate').valueAsDate = new Date();
                     finalCalculation();
     
     
-       
-    
-        
-    
-                // }
     
             }
         });
@@ -535,7 +373,10 @@ document.getElementById('EntryDate').valueAsDate = new Date();
     function clearData() {
     
        
-        $("#Inwardno,#Jobno,#PatientName,#WorkType,#RegionDescription,#unit,#Amount").val('');
+        $("#Srno,#RegionDescription,#qty,#Rate,#Amount,#TeethNo").val('');
+        $('#teethSide').val('right').trigger('change'); 
+       
+
       
 
     
@@ -563,40 +404,56 @@ document.getElementById('EntryDate').valueAsDate = new Date();
         }
         console.log("total Amount", TotalAmount);
         document.getElementById("TotalAmt").innerHTML = TotalAmount.toFixed(2);
-        document.getElementById("TotalDiscount").innerHTML = TotalAmount.toFixed(2);
-        document.getElementById("TotalAmount").innerHTML = TotalAmount.toFixed(2);
-        document.getElementById("showPreviouseBalance").innerHTML = TotalAmount.toFixed(2);
-        document.getElementById("Discount").innerHTML = 0.00;
+        
+       
+
+
+        function numberToWordsIndian(num) {
+    if (num === 0) return "Zero";
+
+    const belowTwenty = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+    const tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+    const units = ["", "Thousand", "Lakh", "Crore"];
+
+    function convertLessThanThousand(n) {
+        let str = "";
+        if (n >= 100) {
+            str += belowTwenty[Math.floor(n / 100)] + " Hundred ";
+            n %= 100;
+        }
+        if (n >= 20) {
+            str += tens[Math.floor(n / 10)] + " ";
+            n %= 10;
+        }
+        if (n > 0) {
+            str += belowTwenty[n] + " ";
+        }
+        return str.trim();
+    }
+
+    let words = "";
+    let unitIndex = 0;
+
+    while (num > 0) {
+        let part = num % (unitIndex === 1 ? 100 : 1000); // हजारानंतर 100 चा गट (लाख, कोटी)
+        if (part > 0) {
+            words = convertLessThanThousand(part) + (unitIndex > 0 ? " " + units[unitIndex] + " " : "") + words;
+        }
+        num = Math.floor(num / (unitIndex === 1 ? 100 : 1000));
+        unitIndex++;
+    }
+
+    return words.trim();
+}
+
+console.log(numberToWordsIndian(TotalAmount)); // Output: "One Crore Twenty Three Lakh Forty Five Thousand Six Hundred Seventy Eight"
+document.getElementById("NumberInWord").innerHTML = numberToWordsIndian(TotalAmount);
+
 
 
     }
     
     
-
-    
-    // function myFunction() {
-    //     var z = document.getElementById("fkitemIdError");
-    //     // var c=document.getElementById("fkpartyIdError");
-    //     var d = document.getElementById("fkInwardTypeIdError");
-    //     //  var e=document.getElementById("itemPriceError");
-    //      var f=document.getElementById("quantityError");
-    
-    
-    
-    
-    //     setTimeout(function() {
-    //         z.innerHTML = ""
-    //     }, 3000);
-    //     // setTimeout(function(){ c.innerHTML="" }, 3000);
-    //     setTimeout(function() {
-    //         d.innerHTML = ""
-    //     }, 3000);
-    //     // setTimeout(function(){ e.innerHTML="" }, 3000);
-    //     setTimeout(function(){ f.innerHTML="" }, 3000);
-    
-    
-    
-    // }
     </script>
     
 
@@ -614,40 +471,29 @@ document.getElementById('EntryDate').valueAsDate = new Date();
 function generate() {
     const ele = document.getElementById('PrintPreview');
 
-    // प्रिंट व्ह्यू दिसू द्या
+   
     ele.style.display = 'block';
 
     let clientName = document.getElementById("clientnm").value;
     let mobileno = document.getElementById("mobileno").value;
     let address = document.getElementById("address").value;
-    let banckname = document.getElementById("banckname").value;
-    let AccountNo = document.getElementById("AccountNo").value;
-    let IFSCCode = document.getElementById("IFSCCode").value;
-    let invoiceNo = document.getElementById("invoiceNo").value;
+    let No = document.getElementById("No").value;
     let BillPeriod = document.getElementById("BillPeriod").value;
-    let To = document.getElementById("To").value;
 
     let date = new Date(BillPeriod);
-    let dateTo = new Date(To);
+   
 
     let formattedDate = date.getDate().toString().padStart(2, '0') + "/" + 
                         (date.getMonth() + 1).toString().padStart(2, '0') + "/" + 
                         date.getFullYear();
 
-    let formattedDateTo = dateTo.getDate().toString().padStart(2, '0') + "/" + 
-                          (dateTo.getMonth() + 1).toString().padStart(2, '0') + "/" + 
-                          dateTo.getFullYear();
 
     document.getElementById("clientname").textContent = clientName;
     document.getElementById("showmobileno").textContent = mobileno;
     document.getElementById("showaddress").textContent = address;
-    document.getElementById("showbanckname").textContent = banckname;
-    document.getElementById("showAccountNo").textContent = AccountNo;
-    document.getElementById("showIFSCode").textContent = IFSCCode;
-    document.getElementById("showInvoiceNo").textContent = invoiceNo;
-    document.getElementById("showBillperiod").textContent = formattedDate;
-    document.getElementById("showTo").textContent = formattedDateTo;
-    document.getElementById("showTodaytDate").textContent = formattedDateTo;
+    document.getElementById("showNo").textContent = No;
+    document.getElementById("showBillDate").textContent = formattedDate;
+   
 
     setTimeout(function() {
         var opt = {
