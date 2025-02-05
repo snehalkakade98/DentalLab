@@ -50,6 +50,42 @@
         display: none; /* मोबाईलसाठी लपवा */
     }
 }
+
+.teeth-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            width:100%;
+            height: 60px;
+            position: relative;
+            margin: auto;
+        }
+        .teeth-grid div {
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            min-height: 20px;
+        }
+        /* .teeth-plus::before,
+        .teeth-plus::after {
+            content: "";
+            position: absolute;
+            background-color: black;
+        } */
+        /* .teeth-plus::before {
+            width: 80%;
+            height: 2px;
+            top: 50%;
+            left: 10%;
+        }
+        .teeth-plus::after {
+            height: 80%;
+            width: 2px;
+            left: 50%;
+            top: 10%;
+        } */
     </style>
 </head>
 <body>
@@ -102,12 +138,6 @@
           <h4 style="font-family:poppins;font-weight:bold" class="text-center">Patient Info</h4>
 
           <div class="mb-3 col-12">
-            <label>Sr No</label>
-            <input type="number" class="form-control" id="Srno" placeholder="Enter Sr No">
-          </div>
-
-
-          <div class="mb-3 col-12">
             <label>Region Description</label>
             <textarea  class="form-control" id="RegionDescription" placeholder="Enter Region Description"></textarea>
           </div>
@@ -122,10 +152,11 @@
             <label>Teeth Side</label>
                  <select  id="teethSide" class="form-control">
                     <option value="0">Select</option>
-                    <option value="0">Left</option>
-                    <option value="0">Right</option>
-                    <option value="0">Top</option>
-                    <option value="0">Bottom</option>
+                    <option value="1">Upper Left</option>
+                    <option value="2">Upper Right</option>
+
+                    <option value="3">Lower Left</option>
+                    <option value="4">Lower Right</option>
                  </select>
 
 
@@ -133,21 +164,17 @@
 
           <div class="mb-3 col-6">
             <label>Qty</label>
-            <input type="text" class="form-control" id="qty">
+            <input type="number" class="form-control" id="qty">
 
           </div>
 
           <div class="mb-3 col-6">
             <label>Rate </label>
-                   <input type="text" class="form-control" id="Rate">
+                   <input type="number" class="form-control" id="Rate">
 
           </div>
 
-          <div class="mb-3 col-6">
-            <label>Amount</label>
-            <input type="text" class="form-control" id="Amount">
-
-          </div>
+         
         </div>
     </form>
 
@@ -247,11 +274,11 @@
         <thead>
 
         <tr>
-            <th style="width: 3%;">sr No</th>
-            <th style="width: 25%;">Description</th>
-            <th style="width: 3%;">Qty</th>
-            <th style="width: 3%;">Rate</th>
-            <th style="width: 5%;">Amount</th>
+            <th style="width: 3%;border-left:none;border-top: none;" >sr No</th>
+            <th style="width: 25%;border-top: none;">Description</th>
+            <th style="width: 3%;border-top: none;">Qty</th>
+            <th style="width: 3%;border-top: none;">Rate</th>
+            <th style="width: 5%;border-right:none;border-top: none;">Amount</th>
 
         </tr>
     </thead>
@@ -263,11 +290,11 @@
        
       <tfoot>
         <tr>
-            <td></td>
+            <td style="border-left:none;"></td>
             <td></td>
             <td></td>
             <td>Total</td>
-            <td><p id="TotalAmt" style="font-weight:bold;font-size:18px"></p></td>
+            <td style="border-right:none"><p id="TotalAmt" style="font-weight:bold;font-size:18px"></p></td>
 
         </tr>
       </tfoot>
@@ -316,6 +343,8 @@ document.getElementById('BillPeriod').valueAsDate = new Date();
 
     var a = false;
     var i = 0;
+    var sr = 1;
+
     var chkRemoveItem = 0;
     $(document).ready(function() {
     
@@ -324,20 +353,18 @@ document.getElementById('BillPeriod').valueAsDate = new Date();
             if (a == false) {
             
                 
-                var teethSideName = $('#teethSide option:selected').text();
-    
-              
-    
-                var Srno = document.getElementById("Srno").value;
-                var RegionDescription = document.getElementById("RegionDescription").value;
+                var teethSide = parseInt($("#teethSide").val()) || 0;
+            var TeethNo = $("#TeethNo").val();
+            var RegionDescription = $("#RegionDescription").val();
+            var Rate = parseFloat($("#Rate").val()) || 0;
+            var qty = parseFloat($("#qty").val()) || 0;
+            var Amount = Rate * qty;
 
-                var TeethNo = document.getElementById("TeethNo").value;
-                var Rate = document.getElementById("Rate").value;
-
-                var qty = document.getElementById("qty").value;
-               
-           
-                var Amount = document.getElementById("Amount").value;
+            var td1 = "", td2 = "", td3 = "", td4 = "";
+            if (teethSide == 1) { td1 = TeethNo; }
+            else if (teethSide == 2) { td2 = TeethNo; }
+            else if (teethSide == 3) { td3 = TeethNo; }
+            else if (teethSide == 4) { td4 = TeethNo; }
 
             
     
@@ -349,12 +376,28 @@ document.getElementById('BillPeriod').valueAsDate = new Date();
                     var divtest = document.createElement("tr");
                     divtest.setAttribute("class", "removeclass" + i);
                     divtest.innerHTML =
-                    '   <td class="" style="padding:  5px!important;font-size: 15px;">' +Srno +'</td> <td class="" style="padding:  5px!important;font-size: 15px;">' +RegionDescription +'<br> '+TeethNo+' '+teethSideName+'</td> <td class="" style="padding: 5px!important;font-size: 15px;    word-break: break-all;">' +qty +'</td> <td class="" style="padding: 5px!important;font-size: 15px;">' +Rate +'</td>  <td class="" style="padding:  5px!important;font-size: 15px;"> <input type="hidden"  id="Amount' +
-                        i +'"  class=" Amount  form-control " value="' + Amount +'">' +Amount +'</td> ';
+                    `
+                <tr>
+                    <td style="border-left:none;">${sr}</td>
+                    <td style="padding:0px 0px!important;">
+                       <div class="py-2" style="text-align-left;font-weight:bold"> <p>   ${RegionDescription}</p></div>
+                        <div class="teeth-grid teeth-plus">
+                            <div style="border-left:none;">${td1 || '-'}</div>
+                            <div style="border-right:none;">${td2 || '-'}</div>
+                            <div style="border-top:none;border-bottom:none;border-left:none">${td3 || '-'}</div>
+                            <div style="border-top:none;border-bottom:none;border-right:none">${td4 || '-'}</div>
+                        </div>
+                    </td>
+                    <td>${qty}</td>
+                    <td>${Rate}</td>
+                    <td style="border-right:none;"> <input type="hidden"  id="Amount${i}"  class=" Amount  form-control " value="${Amount}"> ${Amount}</td>
+                </tr>`;
 
     
                     objTo.appendChild(divtest);
                     i++;
+                    sr++;
+
     
     
                     clearData();
