@@ -25,6 +25,7 @@
             font-size:16px;
             margin: 0;
         }
+        select,option { font-family: "poppins";}
         .invoice{
             font-weight:bold;
             font-size: 22px;
@@ -148,7 +149,7 @@
 
           </div>
 
-          <div class="mb-3 col-6">
+          <!-- <div class="mb-3 col-6">
             <label>Teeth Side</label>
                  <select  id="teethSide" class="form-control">
                     <option value="0">Select</option>
@@ -160,7 +161,76 @@
                  </select>
 
 
+          </div> -->
+
+          <div class="mb-3 col-6">
+            <label>Work Type</label>
+                 <select  id="workType" class="form-control">
+                    <option value="0">Select</option>
+                    <option value="1">Full Ceramic</option>
+                    <option value="2">Half Ceramic </option>
+
+                    <option value="3">White metal</option>
+                    <option value="4">Metal with Acrylic    </option>
+                    <option value="4">Denture U/L    </option>
+                    <option value="4">Singel Denture</option>
+                    <option value="4">RPD</option>
+
+                    
+
+                 </select>
+
+
+          </div> 
+          
+          <div class="mb-3 col-12">
+            <label class="mb-3">Teeth Side</label>
+             
+
+           <div class="d-flex" style="gap:30px">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="UpperLeft"  value="1" >
+                <label class="form-check-label">Upper Left   </label>
+              </div>
+
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="UpperRight"  value="1" >
+                <label class="form-check-label">Upper Right   </label>
+              </div>
+
+
+             
+           </div>
+
           </div>
+
+
+          <div class="mb-3 col-12">
+           
+             
+
+           <div class="d-flex" style="gap:30px">
+           
+
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="LowerLeft"  value="1" >
+                <label class="form-check-label">Lower Left  </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="LowerRight"  value="1" >
+                <label class="form-check-label">Lower Right</label>
+              </div>
+           </div>
+
+          </div>
+
+          
+
+
+        
 
           <div class="mb-3 col-6">
             <label>Qty</label>
@@ -189,13 +259,42 @@
 
 
     <div class="printPart   pt-0  pb-3 col-11    mt-3" id="PrintPreview" style="border: 2px solid;margin-left: 4%;">
-          
-        <div class=" text-center px-2" style="    margin: 0 auto;width:29%;border-bottom: 2px solid;border-right: 2px solid;border-left: 2px solid;"><p class="mb-0">Cash/ Credit Memo</p></div>
+        <div class="row">
+            <div class="col-2 pt-4">
+                <div style="margin-left: 20%;">
+                    <img src="assets/img6.jpg" alt="Sample Image" height="80" width=" 80" style="border-radius:50%">
+        
+        
+                </div>
+            </div>
+            <div class="col-7 text-center">
+                <div class=" text-center px-2" style="    margin: 0 auto;width:45%;border-bottom: 2px solid;border-right: 2px solid;border-left: 2px solid;"><p class="mb-0">Cash/ Credit Memo</p></div>
+
+                <div class="mt-5">
+                    <h5 class="DentalHead">Vighnaharta Dental Lab</h5>
+         
+                 </div>
+
+                 <div class="col-12 text-center">
+                    <p>(Ceramic, White Metal, Acrylic, Flexible Denture, CPD) <br>
+                       GANESH JAGTAP (Dental Technician) <br>
+                       Mob. 9767 161800</p>
+               </div>
+
+            </div>
+            <div class="col-3 pt-4" style="padding-right: 30px;">
+                <!-- <div style="visibility: hidden;">dfdfdfdfdfdfdfdfd</div> -->
+                <img src="assets/qr.jpg" alt="" style="height: 130px;width: 130px;">
+            </div>
+        </div>  
+
+
+        <!-- <div class=" text-center px-2" style="    margin: 0 auto;width:29%;border-bottom: 2px solid;border-right: 2px solid;border-left: 2px solid;"><p class="mb-0">Cash/ Credit Memo</p></div>
 
 
     <div class="d-flex justify-content-between align-items-center mb-3 px-3">
         <div style="margin-left: 5%;">
-            <img src="assets/img1.jpg" alt="Sample Image" height="80" width=" 80" style="border-radius:50%">
+            <img src="assets/img6.jpg" alt="Sample Image" height="80" width=" 80" style="border-radius:50%">
 
 
         </div>
@@ -211,9 +310,9 @@
          <p>(Ceramic, White Metal, Acrylic, Flexible Denture, CPD) <br>
             GANESH JAGTAP (Dental Technician) <br>
             Mob. 9767 161800</p>
-    </div>
+    </div> -->
 
-    <div class="col-12 mt-4 px-3" style="    border-top: 2px solid;
+    <div class="col-12 mt-4 px-3" style="  border-top: 2px solid;
     border-bottom: 1px solid;">
         <div class="row" >
             <div class="col-9" style="border-right: 2px solid;">
@@ -275,6 +374,8 @@
 
         <tr>
             <th style="width: 3%;border-left:none;border-top: none;" >sr No</th>
+            <th style="width: 5%;border-left:none;border-top: none;" >Work Type</th>
+
             <th style="width: 25%;border-top: none;">Description</th>
             <th style="width: 3%;border-top: none;">Qty</th>
             <th style="width: 3%;border-top: none;">Rate</th>
@@ -293,7 +394,9 @@
             <td style="border-left:none;"></td>
             <td></td>
             <td></td>
-            <td>Total</td>
+            <td></td>
+
+            <td><b>Total</b></td>
             <td style="border-right:none"><p id="TotalAmt" style="font-weight:bold;font-size:18px"></p></td>
 
         </tr>
@@ -318,6 +421,28 @@
         </div>
     </div>
 </div>
+
+<hr>
+
+<div class="col-12 mt-2 px-3 ">
+    <div class="row">
+
+        <div class="col-6 mt-2">
+            <p><b>Account Name: </b>Ganesh Ambaji Jagtap</p>
+        </div>
+        
+        <div class="col-6 mt-2">
+            <p><b>Account Number : </b> 093910510004920
+            </p>
+        </div>
+        <div class="col-6 mt-2">
+            <p><b>IFSC Code : </b> BKID0000939</p>
+        </div>
+
+    </div>
+</div>
+
+
 
 
 
@@ -353,18 +478,39 @@ document.getElementById('BillPeriod').valueAsDate = new Date();
             if (a == false) {
             
                 
-                var teethSide = parseInt($("#teethSide").val()) || 0;
+                
+
+
+                var workTypeName = $('#workType option:selected').text();
+
             var TeethNo = $("#TeethNo").val();
             var RegionDescription = $("#RegionDescription").val();
             var Rate = parseFloat($("#Rate").val()) || 0;
             var qty = parseFloat($("#qty").val()) || 0;
             var Amount = Rate * qty;
 
-            var td1 = "", td2 = "", td3 = "", td4 = "";
-            if (teethSide == 1) { td1 = TeethNo; }
-            else if (teethSide == 2) { td2 = TeethNo; }
-            else if (teethSide == 3) { td3 = TeethNo; }
-            else if (teethSide == 4) { td4 = TeethNo; }
+            var UpperLeft = $("#UpperLeft").prop("checked") ? TeethNo : "-";
+        var UpperRight = $("#UpperRight").prop("checked") ? TeethNo : "-";
+        var LowerLeft = $("#LowerLeft").prop("checked") ? TeethNo : "-";
+        var LowerRight = $("#LowerRight").prop("checked") ? TeethNo : "-";
+
+            // var td1 = "", td2 = "", td3 = "", td4 = "";
+            // if (UpperLeft == 1) { td1 = TeethNo; }
+            // else{
+            //     td1 = "-";
+            // }
+            // if (UpperRight == 1) { td2 = TeethNo; }
+            // else{
+            //     td2 = "-";
+            // }
+            // if (LowerLeft == 1) { td3 = TeethNo; }
+            // else{
+            //     td3 = "-";
+            // }
+            // if (LowerRight == 1) { td4 = TeethNo; }
+            // else{
+            //     td4 = "-";
+            // }
 
             
     
@@ -376,22 +522,23 @@ document.getElementById('BillPeriod').valueAsDate = new Date();
                     var divtest = document.createElement("tr");
                     divtest.setAttribute("class", "removeclass" + i);
                     divtest.innerHTML =
-                    `
-                <tr>
-                    <td style="border-left:none;">${sr}</td>
-                    <td style="padding:0px 0px!important;">
-                       <div class="py-2" style="text-align-left;font-weight:bold"> <p>   ${RegionDescription}</p></div>
-                        <div class="teeth-grid teeth-plus">
-                            <div style="border-left:none;">${td1 || '-'}</div>
-                            <div style="border-right:none;">${td2 || '-'}</div>
-                            <div style="border-top:none;border-bottom:none;border-left:none">${td3 || '-'}</div>
-                            <div style="border-top:none;border-bottom:none;border-right:none">${td4 || '-'}</div>
-                        </div>
-                    </td>
-                    <td>${qty}</td>
-                    <td>${Rate}</td>
-                    <td style="border-right:none;"> <input type="hidden"  id="Amount${i}"  class=" Amount  form-control " value="${Amount}"> ${Amount}</td>
-                </tr>`;
+        `
+        <tr>
+            <td style="border-left:none;">${sr}</td>
+            <td style="border-left:none;">${workTypeName}</td>
+            <td style="padding:0px 0px!important;">
+                <div class="py-2" style="text-align-left;font-weight:bold"> <p>${RegionDescription}</p></div>
+                <div class="teeth-grid teeth-plus">
+                    <div style="border-left:none;">${UpperLeft}</div>
+                    <div style="border-right:none;">${UpperRight}</div>
+                    <div style="border-top:none;border-bottom:none;border-left:none">${LowerLeft}</div>
+                    <div style="border-top:none;border-bottom:none;border-right:none">${LowerRight}</div>
+                </div>
+            </td>
+            <td>${qty}</td>
+            <td>${Rate}</td>
+            <td style="border-right:none;"> <input type="hidden" id="Amount${i}" class="Amount form-control" value="${Amount}"> ${Amount}</td>
+        </tr>`;
 
     
                     objTo.appendChild(divtest);
@@ -418,6 +565,8 @@ document.getElementById('BillPeriod').valueAsDate = new Date();
        
         $("#Srno,#RegionDescription,#qty,#Rate,#Amount,#TeethNo").val('');
         $('#teethSide').val('right').trigger('change'); 
+        // Checkbox अनचेक करा
+    $("#UpperLeft, #UpperRight, #LowerLeft, #LowerRight").prop("checked", false);
        
 
       
@@ -510,11 +659,8 @@ document.getElementById("NumberInWord").innerHTML = numberToWordsIndian(TotalAmo
 
 <script>
 
-
 function generate() {
     const ele = document.getElementById('PrintPreview');
-
-   
     ele.style.display = 'block';
 
     let clientName = document.getElementById("clientnm").value;
@@ -524,19 +670,15 @@ function generate() {
     let BillPeriod = document.getElementById("BillPeriod").value;
 
     let date = new Date(BillPeriod);
-   
-
     let formattedDate = date.getDate().toString().padStart(2, '0') + "/" + 
                         (date.getMonth() + 1).toString().padStart(2, '0') + "/" + 
                         date.getFullYear();
-
 
     document.getElementById("clientname").textContent = clientName;
     document.getElementById("showmobileno").textContent = mobileno;
     document.getElementById("showaddress").textContent = address;
     document.getElementById("showNo").textContent = No;
     document.getElementById("showBillDate").textContent = formattedDate;
-   
 
     setTimeout(function() {
         var opt = {
@@ -548,19 +690,37 @@ function generate() {
             jsPDF: { unit: 'in', format: 'A4', orientation: 'portrait' }
         };
 
-        html2pdf().set(opt).from(ele).save().then(() => {
+        html2pdf().set(opt).from(ele).toPdf().get('pdf').then(function(pdf) {
+            let totalPages = pdf.internal.getNumberOfPages();
+            let pageWidth = pdf.internal.pageSize.getWidth();
+            let pageHeight = pdf.internal.pageSize.getHeight();
+
+            pdf.setGState(new pdf.GState({ opacity: 0.1 })); // पारदर्शक वॉटरमार्क (10% visibility)
+            pdf.setTextColor(150, 150, 150);
+            pdf.setFontSize(50);
+
+            for (let i = 1; i <= totalPages; i++) {
+                pdf.setPage(i);
+                pdf.text("Vighnaharta Dental Lab", pageWidth / 2, pageHeight / 2, {
+                    angle: 35,
+                    align: 'center'
+                });
+            }
+
+            pdf.save('Vighnaharta Dental Lab.pdf');
+        }).then(() => {
             if (window.innerWidth <= 500) {
                 ele.style.display = 'none';
             }
 
-            // PDF डाउनलोड झाल्यावर पेज रीफ्रेश करा
             setTimeout(() => {
-                window.location.reload();
-            }, 1000);
+                ele.style.display = 'none';
+            }, 1500);
         });
 
     }, 500);
 }
+
 
 
 </script>
